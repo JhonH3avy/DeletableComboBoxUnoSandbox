@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="ComboBoxUnoSandbox.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ComboBoxUnoSandbox"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:TheHub.UI.Controls"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal" Visibility="{Binding Path=Visible, Converter={StaticResource CNVBoolToVisibility}}">
+      <TextBlock Style="{StaticResource fieldLabel}" Text="{Binding Prompt}" Width="300"/>
+      <controls:DeletableComboBox x:Name="ComboDelBox" DropDownOpened="ComboBox_OnDropDownOpened">
+      </controls:DeletableComboBox>
+      <Button x:Name="xDropDownGlyph" Style="{StaticResource AutoSuggestBoxDeleteButtonStyle}" Click="XDropDownGlyph_OnClick"/>
+  </StackPanel>
+</Page>
