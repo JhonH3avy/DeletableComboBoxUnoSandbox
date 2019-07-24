@@ -11,10 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBoxUnoSandbox.iOS", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBoxUnoSandbox.UWP", "ComboBoxUnoSandbox\ComboBoxUnoSandbox.UWP\ComboBoxUnoSandbox.UWP.csproj", "{60FE6595-0D55-4605-B023-0262C52BABF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComboBoxUnoSandbox.Wasm", "ComboBoxUnoSandbox\ComboBoxUnoSandbox.Wasm\ComboBoxUnoSandbox.Wasm.csproj", "{94D4697F-89E3-4E9A-97FC-E323CF981E88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ComboBoxUnoSandbox.Wasm", "ComboBoxUnoSandbox\ComboBoxUnoSandbox.Wasm\ComboBoxUnoSandbox.Wasm.csproj", "{94D4697F-89E3-4E9A-97FC-E323CF981E88}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		ComboBoxUnoSandbox\ComboBoxUnoSandbox.Shared\ComboBoxUnoSandbox.Shared.projitems*{60fe6595-0d55-4605-b023-0262c52babf1}*SharedItemsImports = 4
 		ComboBoxUnoSandbox\ComboBoxUnoSandbox.Shared\ComboBoxUnoSandbox.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

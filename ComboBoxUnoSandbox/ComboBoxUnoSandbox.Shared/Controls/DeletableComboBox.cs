@@ -19,6 +19,18 @@ namespace TheHub.UI.Controls
             DefaultStyleKey = typeof(DeletableComboBox);
         }
 
+        protected override void OnApplyTemplate()
+        {
+            base.OnApplyTemplate();
+            var placeholderTextBlock = FindName("PlaceholderTextBlock") as TextBlock;
+            if (placeholderTextBlock == null)
+            {
+                Console.WriteLine("placeholder is null");
+                return;
+            }
+            Console.WriteLine("placeholder was found inside your heart!");
+        }
+
         public event EventHandler<CancelEventArgs> Deleting;
 
         protected virtual void OnDeleting(CancelEventArgs e)

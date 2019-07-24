@@ -19,9 +19,23 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\DeletableComboBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DateTimeEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Extensions\DateTimeExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Extensions\StringExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\FormatStrings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\HseParameterType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Json\CodeName.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Linq\EnumerableExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\UriBulderExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ValidationResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\EventArgs\EntityChangedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\IValueFormatter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ReportParameterHolder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ReportParameterWcf.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)MainPage.xaml">
@@ -44,8 +58,5 @@
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
   </ItemGroup>
 </Project>

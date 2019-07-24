@@ -12,6 +12,6 @@
       <TextBlock Style="{StaticResource fieldLabel}" Text="{Binding Prompt}" Width="300"/>
       <controls:DeletableComboBox x:Name="ComboDelBox" DropDownOpened="ComboBox_OnDropDownOpened">
       </controls:DeletableComboBox>
-      <Button x:Name="xDropDownGlyph" Style="{StaticResource AutoSuggestBoxDeleteButtonStyle}" Click="XDropDownGlyph_OnClick"/>
+      <Button Tag="{Binding}" x:Name="xDropDownGlyph" Style="{StaticResource AutoSuggestBoxDeleteButtonStyle}" Click="XDropDownGlyph_OnClick"/>
   </StackPanel>
 </Page>

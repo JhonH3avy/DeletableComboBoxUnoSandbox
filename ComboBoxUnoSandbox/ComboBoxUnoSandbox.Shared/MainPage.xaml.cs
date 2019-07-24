@@ -14,7 +14,10 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using ComboBoxUnoSandbox.Shared.Models;
 using Microsoft.Toolkit.Uwp.UI.Converters;
+using Microsoft.Toolkit.Uwp.UI.Extensions;
+using TheHub.UI.Controls;
 #if __WASM__
 using Uno.Extensions;
 using ComboBoxUnoSandbox.Wasm.Annotations;
@@ -66,12 +69,22 @@ namespace ComboBoxUnoSandbox
 
         private void XDropDownGlyph_OnClick(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("X dropdown");
+            Console.WriteLine("ComboBox_OnDropDownOpened");
+            var button = (Button)sender;
+            var holder = button.Tag as ReportParameterHolder;
+            holder.Value = null;
+            var dcb = button.Parent.FindDescendant<DeletableComboBox>(); //TODO: Delete this when the Value change in a reactive way the SelectedIndex
+            dcb.SelectedIndex = -1;
         }
 
         private void ComboBox_OnDropDownOpened(object sender, object e)
         {
-            Console.WriteLine("ComboBox_OnDropDownOpened");
+            Console.WriteLine("X dropdown");
+            var cb = sender as ComboBox;
+            if (cb != null)
+            {
+                Console.WriteLine("items:" + cb.Items.Count);
+            }
         }
 
         private string _prompt;
