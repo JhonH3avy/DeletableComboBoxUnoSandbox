@@ -1,0 +1,45 @@
+﻿<ContentControl
+    x:Class="ComboBoxUnoSandbox.Shared.ReportParametersView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ComboBoxUnoSandbox.Shared"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:ComboBoxUnoSandbox.Shared.ViewModel"
+    xmlns:converters="using:Microsoft.Toolkit.Uwp.UI.Converters"
+    xmlns:models="using:ComboBoxUnoSandbox.Shared.Models"
+    xmlns:tsc="using:TheHub.UI.Controls"
+    xmlns:referenceData="using:ComboBoxUnoSandbox.Shared.Helpers"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    d:DataContext="{d:DesignInstance viewModel:ReportParametersViewModel}">
+
+    <ContentControl.Resources>
+        <converters:BoolToVisibilityConverter x:Key="cnvBoolToVisibility"/>
+
+        <DataTemplate x:Key="comboTemplate">
+            <StackPanel Orientation="Horizontal" Visibility="{Binding Path=Visible, Converter={StaticResource cnvBoolToVisibility}}">
+                <TextBlock Style="{StaticResource fieldLabel}" Text="{Binding Prompt}" Width="300"/>
+                <tsc:DeletableComboBox
+                                       DisplayMemberPath="{Binding DisplayMember}"
+                                       SelectedValuePath="{Binding ValueMember}"
+                                       ItemsSource="{Binding ItemsView.Source}"
+                                       SelectedValue="{Binding Value, Mode=TwoWay}"
+                                       DropDownOpened="ComboBox_OnDropDownOpened"
+                                       referenceData:ReferenceBinding.ReferencePath="{Binding ItemsSource}"
+                					   referenceData:ReferenceBinding.ParamHolders="{Binding ItemsSource, ElementName=t}"
+                                       referenceData:ReferenceBinding.Behavior="{Binding Behavior}"
+                					   Style="{StaticResource colValue}" 
+                                       MinWidth="250">
+                </tsc:DeletableComboBox>
+                <Button Tag="{Binding}"  x:Name="xDropDownGlyph" Style="{StaticResource AutoSuggestBoxDeleteButtonStyle}" Click="XDropDownGlyph_OnClick"/>
+            </StackPanel>
+        </DataTemplate>
+        
+        <referenceData:ParameterTemplateSelector 
+										           ComboHolder="{StaticResource comboTemplate}" 
+                                                   x:Key="parameterSelector">
+        </referenceData:ParameterTemplateSelector>
+    </ContentControl.Resources>
+    <ItemsControl ItemsSource="{Binding ReportParameters}" ItemTemplateSelector="{StaticResource parameterSelector}"  x:Name="t"/>
+</ContentControl>

@@ -1,7 +1,18 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Text;
-
+using System.Diagnostics;
+//using System.ComponentModel;
+using System.Linq;
+using System.Windows;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Data;
+using ComboBoxUnoSandbox.Shared.Controls;
+using ComboBoxUnoSandbox.Shared.Helpers.Linq;
+using ComboBoxUnoSandbox.Shared.Models;
+using Microsoft.Xaml.Interactivity;
+using Uno.Extensions.Specialized;
 namespace ComboBoxUnoSandbox.Shared.Helpers
 {
     [Bindable]

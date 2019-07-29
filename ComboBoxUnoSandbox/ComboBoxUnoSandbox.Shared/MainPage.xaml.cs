@@ -14,7 +14,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using ComboBoxUnoSandbox.Shared.Helpers;
 using ComboBoxUnoSandbox.Shared.Models;
+using ComboBoxUnoSandbox.Shared.ViewModel;
 using Microsoft.Toolkit.Uwp.UI.Converters;
 using Microsoft.Toolkit.Uwp.UI.Extensions;
 using TheHub.UI.Controls;
@@ -32,39 +34,16 @@ namespace ComboBoxUnoSandbox
     /// </summary>
     public sealed partial class MainPage : Page, INotifyPropertyChanged
     {
-        //private static BoolToVisibilityConverter boolConverter;
-        //private static Style textBlockStyle;
+        ReportViewModel viewModel;
 
-        //static MainPage()
-        //{
-        //    boolConverter = new BoolToVisibilityConverter();
-        //    textBlockStyle = new Style();
-        //    textBlockStyle.TargetType = typeof(TextBlock);
-        //    textBlockStyle.Setters.Add(new Setter
-        //    {
-        //        Property = TextBlock.TextAlignmentProperty,
-        //        Value = TextAlignment.Right
-        //    });
-        //    textBlockStyle.Setters.Add(new Setter
-        //    {
-        //        Property = TextBlock.VerticalAlignmentProperty,
-        //        Value = VerticalAlignment.Center
-        //    });
-        //    textBlockStyle.Setters.Add(new Setter
-        //    {
-        //        Property = TextBlock.MarginProperty,
-        //        Value = "0,0,6,0"
-        //    });
-        //}
+        IEnumerable<ReportParameterHolder> reportParameters;
 
         public MainPage()
         {
             this.InitializeComponent();
-            DataContext = this;
-            //Resources["CNVBoolToVisibility"] = boolConverter;
-            //Resources["fieldLabel"] = textBlockStyle;
-            ComboDelBox.Items.Add("Item1");
-            ComboDelBox.Items.Add("Item2");
+            viewModel = new ReportViewModel();
+            DataContext = viewModel;
+            DialogService.Instance.Dialog = overlayContentDialog;
         }
 
         private void XDropDownGlyph_OnClick(object sender, RoutedEventArgs e)
@@ -118,6 +97,22 @@ namespace ComboBoxUnoSandbox
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public IEnumerable<ReportParameterHolder> ReportParameters
+        {
+            get { return reportParameters; }
+            set
+            {
+                reportParameters = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private void ButtonClick(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("ReportButton was click");
+            viewModel.ReportButtonClick(sender as Button, paramPanel);
         }
     }
 }

@@ -5,13 +5,54 @@
     xmlns:local="using:ComboBoxUnoSandbox"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:controls="using:TheHub.UI.Controls"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:referenceData="using:ComboBoxUnoSandbox.Shared.Helpers"
+    xmlns:controls1="using:ComboBoxUnoSandbox.Shared.Controls"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" Visibility="{Binding Path=Visible, Converter={StaticResource CNVBoolToVisibility}}">
-      <TextBlock Style="{StaticResource fieldLabel}" Text="{Binding Prompt}" Width="300"/>
-      <controls:DeletableComboBox x:Name="ComboDelBox" DropDownOpened="ComboBox_OnDropDownOpened">
-      </controls:DeletableComboBox>
-      <Button Tag="{Binding}" x:Name="xDropDownGlyph" Style="{StaticResource AutoSuggestBoxDeleteButtonStyle}" Click="XDropDownGlyph_OnClick"/>
-  </StackPanel>
+    <Page.Resources>
+        <ControlTemplate TargetType="controls1:OverlayContentDialog" x:Key="dialogTemplate">
+            <Grid>
+                <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                <Grid Visibility="Collapsed" x:Name="dialogGrid" >
+                    <Grid Opacity="0.5" Background="White"/>
+                    <Border BorderBrush="DarkGray" HorizontalAlignment="Center" VerticalAlignment="Center" Background="White" BorderThickness="2">
+                        <UserControl Content="{TemplateBinding DialogContent}" />
+                    </Border>
+                </Grid>
+            </Grid>
+        </ControlTemplate>
+        <DataTemplate x:Key="dataTemplate">
+            <Button Click="ButtonClick" Tag="{Binding Key}" Margin="5" Height="50" Width="250">
+                <Button.Content>
+                    <TextBlock Text="{Binding Name}" TextWrapping="Wrap"/>
+                </Button.Content>
+            </Button>
+        </DataTemplate>
+    </Page.Resources>
+
+    <controls1:OverlayContentDialog x:Name="overlayContentDialog" Template="{StaticResource dialogTemplate}">
+        <Grid x:Name="LayoutRoot">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="10">Your Reports:</TextBlock>
+
+            <ListView ItemsSource="{Binding Model.Reports}" ItemTemplate="{StaticResource dataTemplate}"
+                      Grid.Column="1">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <controls:WrapPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+            </ListView>
+            <StackPanel x:Name="paramPanel" Grid.Column="2"></StackPanel>
+            <StackPanel x:Name="paramPanel2" Grid.Column="2"></StackPanel>
+        </Grid>
+    </controls1:OverlayContentDialog>
+
+    
 </Page>

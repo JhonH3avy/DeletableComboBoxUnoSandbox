@@ -18,27 +18,57 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ComboFilterBehaviour.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\DeletableComboBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\IHasInitialFocus.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\OkCancelWindow.xaml.cs">
+      <DependentUpon>$fileinputname$.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\OverlayContentDialog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DataTemplateSelector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DateTimeEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DialogService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Extensions\DateTimeExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Extensions\StringExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\FormatStrings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\HseDelegateCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\HseParameterType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\IInvalidateCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\Json\CodeName.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Linq\EnumerableExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Helpers\UriBulderExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\RefDataSources.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ReferenceBinding.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\Extensions\UriBulderExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ValidationResult.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\EventArgs\EntityChangedEventArgs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\IValueFormatter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ReportEntity.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ReportModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ReportParameterHolder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ReportParameterWcf.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ReportParametersView.xaml.cs">
+      <DependentUpon>$fileinputname$.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\BusyOkCancelViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\IOkCancelViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\OkViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ReportParametersViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ReportViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\OkCancelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)ReportParametersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -58,5 +88,13 @@
   </ItemGroup>
   <ItemGroup>
     <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="C:\Users\JhonContreras\source\repos\DeletableComboBoxUnoSandbox\ComboBoxUnoSandbox\ComboBoxUnoSandbox.Shared\Controls\OkCancelWindow.xaml.cs">
+      <DependentUpon>OkCancelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="C:\Users\JhonContreras\source\repos\DeletableComboBoxUnoSandbox\ComboBoxUnoSandbox\ComboBoxUnoSandbox.Shared\ReportParametersView.xaml.cs">
+      <DependentUpon>ReportParametersView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
