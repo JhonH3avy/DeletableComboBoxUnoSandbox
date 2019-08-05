@@ -41,9 +41,9 @@ namespace ComboBoxUnoSandbox
         public MainPage()
         {
             this.InitializeComponent();
+            DialogService.Instance.Dialog = overlayContentDialog;
             viewModel = new ReportViewModel();
             DataContext = viewModel;
-            DialogService.Instance.Dialog = overlayContentDialog;
         }
 
         private void XDropDownGlyph_OnClick(object sender, RoutedEventArgs e)

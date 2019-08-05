@@ -35,15 +35,17 @@ namespace ComboBoxUnoSandbox.Shared.Controls
         // attempt to get a simpler interface
         public OkCancelWindow(object content, IOKCancelViewModel viewModel)
         {
+
+            Console.WriteLine("okcancel ctor-before");
             // copied from default ctor due to https://github.com/nventive/Uno/issues/61
             InitializeComponent();
             CancelCommand = new HseDelegateCommand(o => Close());
             GotFocus += OkCancelWindowGotFocus;
-            Debug.WriteLine("okcancel ctor");
+            Console.WriteLine("okcancel ctor");
 
             OkCommand = new HseDelegateCommand(_ =>
             {
-                Debug.WriteLine("ok command");
+                Console.WriteLine("ok command");
                 if (viewModel.OK(this))
                 {
                     Close();

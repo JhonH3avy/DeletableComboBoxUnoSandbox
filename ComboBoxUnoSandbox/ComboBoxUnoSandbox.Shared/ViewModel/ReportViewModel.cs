@@ -23,14 +23,10 @@ namespace ComboBoxUnoSandbox.Shared.ViewModel
         {
             if (button.Tag is int)
             {
-                Console.WriteLine("ReportButton Tag is integer");
                 int key = (int)button.Tag;
-                var paramCapture = new ReportParametersViewModel();
-                DialogService.Instance.Show(new OkCancelWindow(new ReportParametersView(), paramCapture));
-            }
-            else
-            {
-                Console.WriteLine("ReportButton Tag is not an integer");
+                var view = new ReportParametersView();
+                var paramCapture = view.DataContext as ReportParametersViewModel;
+                DialogService.Instance.Show(new OkCancelWindow(view, paramCapture));
             }
         }
     }

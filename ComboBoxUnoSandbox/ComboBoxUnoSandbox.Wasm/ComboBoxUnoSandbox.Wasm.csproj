@@ -6,6 +6,7 @@
     <WasmHead>true</WasmHead>
     <DefineConstants>$(DefineConstants);__WASM__</DefineConstants>
     <NoWarn>NU1701</NoWarn>
+    <WasmShellEnableAOT Condition="$([MSBuild]::IsOsUnixLike()) and '$(Configuration)'=='Release'">true</WasmShellEnableAOT>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="..\ComboBoxUnoSandbox.UWP\Assets\*.png" Link="Assets\%(FileName)%(Extension)" />
