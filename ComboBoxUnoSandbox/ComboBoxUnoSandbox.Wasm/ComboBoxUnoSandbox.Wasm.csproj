@@ -32,8 +32,8 @@
   <ItemGroup>
     <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI" Version="5.1.0-build.200.gf9c311b069" />
     <PackageReference Include="Uno.Microsoft.Xaml.Behaviors.Interactivity" Version="2.0.1-uno.28" />
-    <PackageReference Include="Uno.UI" Version="1.46.0-dev.2335" />
-    <PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.0-dev.300" />
+    <PackageReference Include="Uno.UI" Version="1.46.195-dev.2388" />
+    <PackageReference Include="Uno.Wasm.Bootstrap" Version="1.0.0-dev.302" />
     <DotNetCliToolReference Include="Uno.Wasm.Bootstrap.Cli" Version="1.0.0-dev.137" />
   </ItemGroup>
   <Import Project="..\ComboBoxUnoSandbox.Shared\ComboBoxUnoSandbox.Shared.projitems" Label="Shared" Condition="Exists('..\ComboBoxUnoSandbox.Shared\ComboBoxUnoSandbox.Shared.projitems')" />
