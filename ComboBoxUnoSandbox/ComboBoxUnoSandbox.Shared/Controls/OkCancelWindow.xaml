@@ -15,6 +15,10 @@
         </Border>
         <StackPanel Grid.Row="2" HorizontalAlignment="Right" Orientation="Horizontal" x:Name="skpButtons">
             <StackPanel.Resources>
+                <Style x:Key="Margined" TargetType="Button">
+                    <Setter Property="Margin" Value="3,3,3,3" />
+                    <Setter Property="MinWidth" Value="80" />
+                </Style>
                 <Style x:Key="btn" BasedOn="{StaticResource Margined}" TargetType="Button">
                     <Setter Property="MinWidth" Value="75"/>
                 </Style>

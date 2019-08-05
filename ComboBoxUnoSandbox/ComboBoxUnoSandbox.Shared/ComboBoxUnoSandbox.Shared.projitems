@@ -25,6 +25,7 @@
       <DependentUpon>$fileinputname$.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Controls\OverlayContentDialog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ComboBoxEntity.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DataTemplateSelector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DateTimeEx.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DialogService.cs" />

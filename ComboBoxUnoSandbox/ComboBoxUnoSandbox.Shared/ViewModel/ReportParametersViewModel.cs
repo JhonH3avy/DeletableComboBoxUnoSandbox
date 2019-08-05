@@ -6,7 +6,9 @@ using System.Text;
 using Windows.UI.Popups;
 using ComboBoxUnoSandbox.Shared.Helpers;
 using ComboBoxUnoSandbox.Shared.Helpers.Linq;
+#if __WASM__
 using Uno.Extensions.Specialized;
+#endif
 
 namespace ComboBoxUnoSandbox.Shared.ViewModel
 {
@@ -25,59 +27,45 @@ namespace ComboBoxUnoSandbox.Shared.ViewModel
             var parameters = new List<ReportParameterWcf>();
             parameters.Add(new ReportParameterWcf
             {
-                Behaviorx = "Behaviour1",
-                DefaultValue = "DefaultValue1",
-                DisplayMember = "DisplayMember1",
-                ItemsSource = "ItemsSource1",
+                Behaviorx = null,
+                DefaultValue = null,
+                DisplayMember = "LookupCompanyName",
+                ItemsSource = "ClientAccountCompanies.TypedData",
                 MultiValueField = false,
-                Name = "ClientAccountCompanies",
+                Name = "restrictClientAccountCompanyKey",
                 Nullable = false,
-                Prompt = "Prompt1",
-                PromptUser = false,
-                Type = HseParameterType.String,
-                ValueMember = "ValueMember1"
+                Prompt = "Account",
+                PromptUser = true,
+                Type = HseParameterType.Integer,
+                ValueMember = "Key"
             });
             parameters.Add(new ReportParameterWcf
             {
-                Behaviorx = "Behaviour2",
-                DefaultValue = "DefaultValue2",
-                DisplayMember = "DisplayMember2",
-                ItemsSource = "ItemsSource2",
+                Behaviorx = "restrictClientAccountCompanyKey ClientAccountRefCompanyKey",
+                DefaultValue = null,
+                DisplayMember = "Name",
+                ItemsSource = "Divisions.TypedData",
                 MultiValueField = false,
-                Name = "ClaimSubtypes",
+                Name = "divisionKey",
                 Nullable = false,
-                Prompt = "Prompt2",
-                PromptUser = false,
-                Type = HseParameterType.String,
-                ValueMember = "ValueMember2"
+                Prompt = "Division",
+                PromptUser = true,
+                Type = HseParameterType.Integer,
+                ValueMember = "Key"
             });
             parameters.Add(new ReportParameterWcf
             {
-                Behaviorx = "Behaviour3",
-                DefaultValue = "DefaultValue3",
-                DisplayMember = "DisplayMember3",
-                ItemsSource = "ItemsSource3",
+                Behaviorx = "divisionKey DivisionKey",
+                DefaultValue = null,
+                DisplayMember = "Name",
+                ItemsSource = "BusinessUnits.TypedData",
                 MultiValueField = false,
-                Name = "Divisions",
+                Name = "businessUnitKey",
                 Nullable = false,
-                Prompt = "Prompt3",
+                Prompt = "Business Unit",
                 PromptUser = false,
-                Type = HseParameterType.String,
-                ValueMember = "ValueMember3"
-            });
-            parameters.Add(new ReportParameterWcf
-            {
-                Behaviorx = "Behaviour4",
-                DefaultValue = "DefaultValue4",
-                DisplayMember = "DisplayMember4",
-                ItemsSource = "ItemsSource4",
-                MultiValueField = false,
-                Name = "BusinessUnits",
-                Nullable = false,
-                Prompt = "Prompt4",
-                PromptUser = false,
-                Type = HseParameterType.String,
-                ValueMember = "ValueMember4"
+                Type = HseParameterType.Integer,
+                ValueMember = "Key"
             });
             ProcessParameters(parameters);
         }
@@ -91,10 +79,6 @@ namespace ComboBoxUnoSandbox.Shared.ViewModel
             }
 
             SetParameters(holders);
-            //var client = RefDataSources.Instance.ClientAccountCompanies;
-            //var subTypes = RefDataSources.Instance.ClaimSubtypes;
-            //var divisions = RefDataSources.Instance.Divisions;
-            //var business = RefDataSources.Instance.BusinessUnits;
         }
 
         void SetParameters(List<ReportParameterHolder> holders)

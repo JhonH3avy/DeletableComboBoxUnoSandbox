@@ -15,6 +15,7 @@ using System.ComponentModel.DataAnnotations;
 using ComboBoxUnoSandbox.Shared.Helpers;
 using ComboBoxUnoSandbox.Shared.Helpers.Json;
 using ComboBoxUnoSandbox.Shared.Helpers.Linq;
+using ValidationResult = ComboBoxUnoSandbox.Shared.Helpers.ValidationResult;
 
 namespace ComboBoxUnoSandbox.Shared.Models
 {

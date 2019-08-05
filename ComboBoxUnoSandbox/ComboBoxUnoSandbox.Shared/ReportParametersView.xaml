@@ -15,13 +15,14 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     d:DataContext="{d:DesignInstance viewModel:ReportParametersViewModel}">
 
-    <!--<ContentControl.Resources>
+    <ContentControl.Resources>
+
         <converters:BoolToVisibilityConverter x:Key="cnvBoolToVisibility"/>
 
         <DataTemplate x:Key="comboTemplate">
             <StackPanel Orientation="Horizontal" Visibility="{Binding Path=Visible, Converter={StaticResource cnvBoolToVisibility}}">
                 <TextBlock Style="{StaticResource fieldLabel}" Text="{Binding Prompt}" Width="300"/>
-                --><!--<tsc:DeletableComboBox
+                <tsc:DeletableComboBox
                                        DisplayMemberPath="{Binding DisplayMember}"
                                        SelectedValuePath="{Binding ValueMember}"
                                        ItemsSource="{Binding ItemsView.Source}"
@@ -32,23 +33,22 @@
                                        referenceData:ReferenceBinding.Behavior="{Binding Behavior}"
                 					   Style="{StaticResource colValue}" 
                                        MinWidth="250">
-                </tsc:DeletableComboBox>--><!--
-                <ComboBox></ComboBox>
+                </tsc:DeletableComboBox>
                 <Button Tag="{Binding}"  x:Name="xDropDownGlyph" Style="{StaticResource AutoSuggestBoxDeleteButtonStyle}" Click="XDropDownGlyph_OnClick"/>
             </StackPanel>
         </DataTemplate>
-        
-        <referenceData:ParameterTemplateSelector 
-										           ComboHolder="{StaticResource comboTemplate}" 
-                                                   x:Key="parameterSelector">
-        </referenceData:ParameterTemplateSelector>
+
+
+        <referenceData:ParameterTemplateSelector ComboHolder="{StaticResource comboTemplate}" x:Key="parameterSelector" />
+
     </ContentControl.Resources>
-    ItemsSource="{Binding ReportParameters}" ItemTemplateSelector="{StaticResource parameterSelector}"  x:Name="t"-->
-    <ItemsControl >
-        <system:String>ItemsControl Item #1</system:String>
-        <system:String>ItemsControl Item #2</system:String>
-        <system:String>ItemsControl Item #3</system:String>
-        <system:String>ItemsControl Item #4</system:String>
-        <system:String>ItemsControl Item #5</system:String>
+
+
+    <ItemsControl ItemsSource="{Binding ReportParameters}" ItemTemplateSelector="{StaticResource parameterSelector}"  x:Name="t">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal" />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
     </ItemsControl>
 </ContentControl>

@@ -1,4 +1,6 @@
-﻿using ComboBoxUnoSandbox.Wasm.Annotations;
+﻿#if __WASM__
+using ComboBoxUnoSandbox.Wasm.Annotations;
+#endif
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -46,7 +48,11 @@ namespace ComboBoxUnoSandbox.Shared.Helpers.Linq
         }
 
         [DebuggerStepThrough]
-        public static IEnumerable<T> Run<T>(this IEnumerable<T> enumerable, [InstantHandle] Action<T> action)
+        public static IEnumerable<T> Run<T>(this IEnumerable<T> enumerable,
+#if __WASM__
+            [InstantHandle]
+#endif
+            Action<T> action)
         {
             var result = new List<T>();
             foreach (var o in enumerable)

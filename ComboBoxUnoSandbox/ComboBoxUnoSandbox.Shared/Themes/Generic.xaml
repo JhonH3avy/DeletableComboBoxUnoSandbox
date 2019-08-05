@@ -14,7 +14,15 @@
 
   <Style TargetType="dcb:DeletableComboBox" BasedOn="{StaticResource xxDefaultComboBoxStyle}" />
 
-  <Style x:Key="xxDefaultComboBoxStyle" TargetType="dcb:DeletableComboBox">
+  <Style x:Key="groupBoxRow" TargetType="FrameworkElement">
+      <Setter Property="Margin" Value="0,6,0,0" />
+  </Style>
+
+    <Style x:Key="colValue" TargetType="Control" BasedOn="{StaticResource groupBoxRow}">
+      <Setter Property="HorizontalContentAlignment" Value="Right"/>
+  </Style>
+
+    <Style x:Key="xxDefaultComboBoxStyle" TargetType="dcb:DeletableComboBox">
     <Setter Property="Padding"
     Value="12,5,0,7" />
     <Setter Property="MinWidth"

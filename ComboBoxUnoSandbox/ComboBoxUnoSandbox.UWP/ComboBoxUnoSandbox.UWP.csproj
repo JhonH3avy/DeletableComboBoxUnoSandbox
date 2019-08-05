@@ -13,12 +13,6 @@
     <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
       <Version>5.1.1</Version>
     </PackageReference>
-    <PackageReference Include="Uno.Microsoft.Toolkit.Uwp.UI">
-      <Version>5.1.0-build.200.gf9c311b069</Version>
-    </PackageReference>
-    <PackageReference Include="Uno.Microsoft.Xaml.Behaviors.Interactivity">
-      <Version>2.0.1-uno.28</Version>
-    </PackageReference>
   </ItemGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -107,13 +101,6 @@
     <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <ProjectReference Include="..\ComboBoxUnoSandbox.Wasm\ComboBoxUnoSandbox.Wasm.csproj">
-      <Project>{94D4697F-89E3-4E9A-97FC-E323CF981E88}</Project>
-      <Name>ComboBoxUnoSandbox.Wasm</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +111,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="..\ComboBoxUnoSandbox.Shared\ComboBoxUnoSandbox.Shared.projitems" Label="Shared" Condition="Exists('..\ComboBoxUnoSandbox.Shared\ComboBoxUnoSandbox.Shared.projitems')" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

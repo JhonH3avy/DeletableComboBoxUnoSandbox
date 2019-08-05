@@ -4,7 +4,9 @@ using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using ComboBoxUnoSandbox.Shared.Helpers.Extensions;
 using ComboBoxUnoSandbox.Shared.Models.EventArgs;
+#if __WASM__
 using ComboBoxUnoSandbox.Wasm.Annotations;
+#endif
 
 namespace ComboBoxUnoSandbox.Shared.ViewModel
 {
@@ -58,7 +60,9 @@ namespace ComboBoxUnoSandbox.Shared.ViewModel
             return backingProperty == newValue || (backingProperty == null && newValue == null);
         }
 
+#if __WASM__
         [NotifyPropertyChangedInvocator]
+#endif
         public void RaiseChanged([CallerMemberName] string propertyName = "no caller")
         {
             OnPropertyChanged(new PropertyChangedEventArgs(propertyName));

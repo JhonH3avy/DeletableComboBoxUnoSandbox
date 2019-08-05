@@ -12,7 +12,9 @@ using ComboBoxUnoSandbox.Shared.Controls;
 using ComboBoxUnoSandbox.Shared.Helpers.Linq;
 using ComboBoxUnoSandbox.Shared.Models;
 using Microsoft.Xaml.Interactivity;
+#if  __WASM__
 using Uno.Extensions.Specialized;
+#endif
 namespace ComboBoxUnoSandbox.Shared.Helpers
 {
     [Bindable]
@@ -35,7 +37,9 @@ namespace ComboBoxUnoSandbox.Shared.Helpers
                         Source = GetRefDataItems(path, combo)
                     };
                     var en = paramHolder.ItemsView.Source as IEnumerable;
+#if __WASM__
                     Debug.WriteLine("ReferencePathChanged set itemsview with source with " + en.Count() + " for " + paramHolder.Name + $" old {e.OldValue} and new {e.NewValue}");
+#endif
 
                 }
             }
@@ -67,7 +71,7 @@ namespace ComboBoxUnoSandbox.Shared.Helpers
             var combo = d as ComboBox;
             if (combo == null) return;
 
-            Debug.WriteLine("adding behaviour");
+            Console.WriteLine("adding behaviour");
             AddBehavior(combo);
         }
 
