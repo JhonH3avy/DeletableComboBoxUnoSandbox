@@ -52,7 +52,7 @@ namespace ComboBoxUnoSandbox.Shared.Controls
                     viewModel.Dispose();
                 }
             },
-                                                viewModel.OkCanExecute);
+            viewModel.OkCanExecute);
             CancelCommand = new HseDelegateCommand(_ =>
             {
                 if (viewModel.Cancel())
@@ -61,7 +61,7 @@ namespace ComboBoxUnoSandbox.Shared.Controls
                     viewModel.Dispose();
                 }
             },
-                                                viewModel.CancelCanExecute);
+            viewModel.CancelCanExecute);
             viewModel.OkCommand = OkCommand;
             viewModel.CancelCommand = CancelCommand;
             WindowMessage = content;
@@ -83,12 +83,7 @@ namespace ComboBoxUnoSandbox.Shared.Controls
                         hasInitialFocus.SetInitialFocus();
                     }
                 }
-                // ReSharper disable EmptyGeneralCatchClause
-                catch
-                // ReSharper restore EmptyGeneralCatchClause
-                {
-                    // Swallow exception; not worth bothering user if focus isn't set correctly
-                }
+                catch { }
                 finally
                 {
                     firstTime = false;

@@ -25,18 +25,6 @@
             </StackPanel.Resources>
             <Button x:Name="okButton" Content="{Binding OkText}" Command="{Binding OkCommand}" Visibility="{Binding ElementName=window, 
 				Path=OkVisibility}" Style="{StaticResource btn}"/>
-            <ItemsControl ItemsSource="{Binding AdditionalCommands}" >
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Button Content="{Binding Caption}" Command="{Binding Command}" Style="{StaticResource btn}"/>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
             <Button x:Name="CancelButton" Content="{Binding CancelText}" Command="{Binding CancelCommand}" Visibility="{Binding ElementName=window, 
 				Path=CancelVisibility}" Style="{StaticResource btn}"/>
         </StackPanel>

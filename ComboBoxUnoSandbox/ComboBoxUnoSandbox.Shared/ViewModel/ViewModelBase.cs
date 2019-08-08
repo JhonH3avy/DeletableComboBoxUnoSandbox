@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
+using ComboBoxUnoSandbox.Shared.Helpers;
 using ComboBoxUnoSandbox.Shared.Helpers.Extensions;
 using ComboBoxUnoSandbox.Shared.Models.EventArgs;
 #if __WASM__
@@ -31,29 +33,15 @@ namespace ComboBoxUnoSandbox.Shared.ViewModel
 
         public void ValidateSetAndRaiseChanged<T>(ref T backingProperty, T newValue, Expression<Func<T>> propertySelector)
         {
-            throw new NotImplementedException();
-            //            if (!AreEqual(backingProperty, newValue))
-            //            {
-            ////                var validationResult = new List<ValidationResult>();
-            //                var memberName = ExpressionMemberName(propertySelector);
-            ////                if (!Validator.TryValidateProperty(newValue, new ValidationContext(this, null, null) { MemberName = memberName }, validationResult))
-            ////                {
-            ////                    SetErrors(memberName, validationResult);
-            ////                    return;
-            ////                }
-            //                backingProperty = newValue;
-            //				RaiseChanged(propertySelector);
-            //                ClearErrors(memberName);
-            //            }
         }
 
         protected virtual void ClearErrors(string memberName)
         {
         }
 
-        //        protected virtual void SetErrors(string member, List<ValidationResult> validationResult)
-        //	    {
-        //	    }
+        protected virtual void SetErrors(string member, List<ValidationResult> validationResult)
+        {
+        }
 
         public static bool AreEqual(object backingProperty, object newValue)
         {
