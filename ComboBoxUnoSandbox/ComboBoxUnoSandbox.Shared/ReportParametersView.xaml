@@ -17,6 +17,14 @@
 
     <ContentControl.Resources>
 
+        <Style x:Key="groupBoxRow" TargetType="FrameworkElement">
+            <Setter Property="Margin" Value="0,6,0,0" />
+        </Style>
+
+        <Style x:Key="colValue" TargetType="Control" BasedOn="{StaticResource groupBoxRow}">
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+        </Style>
+
         <converters:BoolToVisibilityConverter x:Key="cnvBoolToVisibility"/>
 
         <DataTemplate x:Key="comboTemplate">
