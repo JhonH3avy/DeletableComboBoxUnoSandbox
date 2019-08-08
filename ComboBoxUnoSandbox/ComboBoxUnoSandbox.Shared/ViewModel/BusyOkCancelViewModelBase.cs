@@ -9,6 +9,7 @@ namespace ComboBoxUnoSandbox.Shared.ViewModel
     {
         bool isBusy;
 
+
         protected BusyOkCancelViewModelBase()
         {
             OkText = "OK";
@@ -48,11 +49,39 @@ namespace ComboBoxUnoSandbox.Shared.ViewModel
             set { SetAndRaiseChanged(ref okText, value); }
         }
 
-        public string CancelText { get; set; }
+        string cancelText;
 
-        public object View { get; set; }
+        public string CancelText
+        {
+            get => cancelText;
+            set
+            {
+                cancelText = value;
+                RaiseChanged();
+            }
+        }
 
-        public string Title { get; set; }
+        object view;
+        public object View
+        {
+            get => view;
+            set
+            {
+                view = value;
+                RaiseChanged();
+            }
+        }
+
+        string title;
+        public string Title
+        {
+            get => title;
+            set
+            {
+                title = value;
+                RaiseChanged();
+            }
+        }
 
         public bool IsBusy
         {
