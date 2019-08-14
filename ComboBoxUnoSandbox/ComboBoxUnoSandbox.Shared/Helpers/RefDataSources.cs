@@ -21,33 +21,33 @@ namespace ComboBoxUnoSandbox.Shared.Helpers
             Instance.ProductCode = productCode;
         }
 
-        public IEnumerable<ComboBoxEntity> ClientAccountCompanies => new[] { new ComboBoxEntity{ Name = "Client1", Value = "Client1" },
-            new ComboBoxEntity{ Name = "Client2", Value = "Client2" },
-            new ComboBoxEntity{ Name = "Client3", Value = "Client2" }
+        public IEnumerable<ComboBoxEntity> ClientAccountCompanies => new[] { new ComboBoxEntity{ Key = 1, Name = "Client1", Value = "Client1" },
+            new ComboBoxEntity{ Key = 2, Name = "Client2", Value = "Client2" },
+            new ComboBoxEntity{ Key = 3, Name = "Client3", Value = "Client2" }
         };
 
-        public IEnumerable<ComboBoxEntity> BusinessUnits => new[] {new ComboBoxEntity{ Name = "BusinessUnit1", Value = "BusinessUnit1" },
-            new ComboBoxEntity{ Name = "BusinessUnit2", Value = "BusinessUnit2" },
-            new ComboBoxEntity{ Name = "BusinessUnit3", Value = "BusinessUnit3" }
-
-        };
-
-        public IEnumerable<ComboBoxEntity> ClaimSubtypes => new[] {new ComboBoxEntity{ Name = "ClaimSubtype1", Value = "ClaimSubtype1" },
-            new ComboBoxEntity{ Name = "ClaimSubtype2", Value = "ClaimSubtype2" },
-            new ComboBoxEntity{ Name = "ClaimSubtype3", Value = "ClaimSubtype3" }
+        public IEnumerable<ComboBoxEntity> BusinessUnits => new[] {new ComboBoxEntity{ Key = 1, Name = "BusinessUnit1", Value = "BusinessUnit1" },
+            new ComboBoxEntity{ Key = 2, Name = "BusinessUnit2", Value = "BusinessUnit2" },
+            new ComboBoxEntity{ Key = 3, Name = "BusinessUnit3", Value = "BusinessUnit3" }
 
         };
 
+        public IEnumerable<ComboBoxEntity> ClaimSubtypes => new[] {new ComboBoxEntity{ Key = 1, Name = "ClaimSubtype1", Value = "ClaimSubtype1" },
+            new ComboBoxEntity{ Key = 2, Name = "ClaimSubtype2", Value = "ClaimSubtype2" },
+            new ComboBoxEntity{ Key = 3, Name = "ClaimSubtype3", Value = "ClaimSubtype3" }
 
-        public IEnumerable<ComboBoxEntity> Companies => new[] { new ComboBoxEntity{ Name = "Company1", Value = "Company1" },
-            new ComboBoxEntity{ Name = "Company2", Value = "Company2" },
-            new ComboBoxEntity{ Name = "Company3", Value = "Company3" }
         };
 
 
-        public IEnumerable<ComboBoxEntity> Contracts => new[] { new ComboBoxEntity{ Name = "Contract1", Value = "Contract1" },
-            new ComboBoxEntity{ Name = "Contract2", Value = "Contract2" },
-            new ComboBoxEntity{ Name = "Contract3", Value = "Contract3" }
+        public IEnumerable<ComboBoxEntity> Companies => new[] { new ComboBoxEntity{ Key = 1, Name = "Company1", Value = "Company1" },
+            new ComboBoxEntity{ Key = 2, Name = "Company2", Value = "Company2" },
+            new ComboBoxEntity{ Key = 3, Name = "Company3", Value = "Company3" }
+        };
+
+
+        public IEnumerable<ComboBoxEntity> Contracts => new[] { new ComboBoxEntity{ Key = 1, Name = "Contract1", Value = "Contract1" },
+            new ComboBoxEntity{ Key = 2, Name = "Contract2", Value = "Contract2" },
+            new ComboBoxEntity{ Key = 3, Name = "Contract3", Value = "Contract3" }
         };
 
 
