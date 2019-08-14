@@ -28,7 +28,7 @@
         <converters:BoolToVisibilityConverter x:Key="cnvBoolToVisibility"/>
 
         <DataTemplate x:Key="comboTemplate">
-            <StackPanel Orientation="Horizontal" Visibility="{Binding Path=Visible, Converter={StaticResource cnvBoolToVisibility}}">
+            <StackPanel Orientation="Horizontal" Visibility="Visible">
                 <TextBlock Style="{StaticResource fieldLabel}" Text="{Binding Prompt}" Width="300"/>
                 <tsc:DeletableComboBox
                                        DisplayMemberPath="{Binding DisplayMember}"
@@ -55,7 +55,7 @@
     <ItemsControl ItemsSource="{Binding ReportParameters}" ItemTemplateSelector="{StaticResource parameterSelector}"  x:Name="t">
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
-                <StackPanel Orientation="Horizontal" />
+                <StackPanel Orientation="Vertical" />
             </ItemsPanelTemplate>
         </ItemsControl.ItemsPanel>
     </ItemsControl>
