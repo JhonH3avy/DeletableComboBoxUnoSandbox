@@ -51,21 +51,21 @@ namespace ComboBoxUnoSandbox.Shared.Helpers
         };
 
 
-        public IEnumerable<ComboBoxEntity>  Divisions => new[] { new ComboBoxEntity{ Name = "Division1", Value = "Division1" },
-            new ComboBoxEntity{ Name = "Division2", Value = "Division2" },
-            new ComboBoxEntity{ Name = "Division3", Value = "Division3" }
+        public IEnumerable<ComboBoxEntity>  Divisions => new[] { new ComboBoxEntity{ Key = 1, Name = "Division1", Value = "Division1" },
+            new ComboBoxEntity{ Key = 2, Name = "Division2", Value = "Division2" },
+            new ComboBoxEntity{ Key = 3, Name = "Division3", Value = "Division3" }
         };
 
 
-        public IEnumerable<ComboBoxEntity> ClientAccountUser => new[] { new ComboBoxEntity{ Name = "ClientAccountUser1", Value = "ClientAccountUser1" },
-            new ComboBoxEntity{ Name = "ClientAccountUser2", Value = "ClientAccountUser2" },
-            new ComboBoxEntity{ Name = "ClientAccountUser3", Value = "ClientAccountUser3" }
+        public IEnumerable<ComboBoxEntity> ClientAccountUser => new[] { new ComboBoxEntity{ Key = 1, Name = "ClientAccountUser1", Value = "ClientAccountUser1" },
+            new ComboBoxEntity{ Key = 2, Name = "ClientAccountUser2", Value = "ClientAccountUser2" },
+            new ComboBoxEntity{ Key = 3, Name = "ClientAccountUser3", Value = "ClientAccountUser3" }
         };
 
 
-        public IEnumerable<ComboBoxEntity> ClientAccountUsers => new[] { new ComboBoxEntity{ Name = "ClientAccountUsers1", Value = "ClientAccountUsers1" },
-            new ComboBoxEntity{ Name = "ClientAccountUsers2", Value = "ClientAccountUsers2" },
-            new ComboBoxEntity{ Name = "ClientAccountUsers3", Value = "ClientAccountUsers3" }
+        public IEnumerable<ComboBoxEntity> ClientAccountUsers => new[] { new ComboBoxEntity{ Key = 1, Name = "ClientAccountUsers1", Value = "ClientAccountUsers1" },
+            new ComboBoxEntity{ Key = 2, Name = "ClientAccountUsers2", Value = "ClientAccountUsers2" },
+            new ComboBoxEntity{ Key = 3, Name = "ClientAccountUsers3", Value = "ClientAccountUsers3" }
         };
 
     }
