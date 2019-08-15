@@ -23,7 +23,7 @@ namespace ComboBoxUnoSandbox.Shared.Helpers
 
         public IEnumerable<ComboBoxEntity> ClientAccountCompanies => new[] { new ComboBoxEntity{ Key = 1, Name = "Client1", Value = "Client1" },
             new ComboBoxEntity{ Key = 2, Name = "Client2", Value = "Client2" },
-            new ComboBoxEntity{ Key = 3, Name = "Client3", Value = "Client2" }
+            new ComboBoxEntity{ Key = 3, Name = "Client3", Value = "Client3" }
         };
 
         public IEnumerable<ComboBoxEntity> BusinessUnits => new[] {new ComboBoxEntity{ Key = 1, Name = "BusinessUnit1", Value = "BusinessUnit1" },
